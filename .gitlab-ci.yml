@@ -1,14 +1,5 @@
-
-.autovalidate-r-autovalidate:
-  stage: build
-  script:
-    - echo "test" > report.md
-  artifacts:
-    when: always
-    paths:
-      - report.md
-      - metadata.yaml
-    expire_in:  # never
+include:
+  - file: '.test.yml'
 
 
 "Autovalidate R (autovalidate)":
