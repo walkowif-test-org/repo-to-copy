@@ -7,10 +7,12 @@ include: '.test.yml'
   before_script:
     - echo "test1"
   after_script:
+    - mkdir test
+    - cd test
     - echo "test2" > metadata.yaml
   artifacts:
     when: always
     paths:
       - report.md
-      - metadata.yaml
+      - test/metadata.yaml
     expire_in: 
