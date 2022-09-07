@@ -1,24 +1,26 @@
-build-job:
+
+.autovalidate-r-autovalidate:
   stage: build
   script:
-    - echo "Hello, $GITLAB_USER_LOGIN!"
-
-test-job1:
-  stage: test
-  script:
-    - echo "This job tests something"
-
-test-job2:
-  stage: test
-  script:
-    - echo "This job tests something, but takes more time than test-job1."
-  after_script:
-    - echo "test" > test1
+    - echo "test" > report.md
   artifacts:
+    when: always
     paths:
-      - test1
+      - report.md
+      - metadata.yaml
+    expire_in:  # never
 
-deploy-prod:
-  stage: deploy
-  script:
-    - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+
+"Autovalidate R (autovalidate)":
+  extends:
+    - .autovalidate-r-autovalidate
+  before_script:
+    - echo "test1"
+  after_script:
+    - echo "test2" > metadata.yaml
+  artifacts:
+    when: always
+    paths:
+      - report.md
+      - metadata.yaml
+    expire_in: 
