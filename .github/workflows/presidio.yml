@@ -25,5 +25,5 @@ jobs:
       - name: Produce the presidio report
         uses: insightsengineering/presidio-action@v1
         with:
-          configuration-file: default
+          configuration-file: "conf/default.yaml"
           output: "parsable"
