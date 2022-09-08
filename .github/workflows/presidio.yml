@@ -1,0 +1,29 @@
+---
+name: Presidio check
+
+on:
+  push:
+    branches:
+      - test-branch
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  presidio-action:
+    runs-on: ubuntu-latest
+    name: Presidio check
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          # 0 fetch-depth is needed if you set `only-changed-files` to true
+          # and if you are configuring this check to run on push events
+          fetch-depth: 0
+
+      - name: Produce the presidio report
+        uses: insightsengineering/presidio-action@v1
+        with:
+          configuration-file: default
+          output: "parsable"
