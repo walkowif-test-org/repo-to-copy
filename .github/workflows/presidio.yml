@@ -27,4 +27,4 @@ jobs:
         with:
           configuration-data: |
             threshold: 0.8
-          output: "github"
+          output: "standard"
