@@ -3,6 +3,7 @@ Package: test
 Title: Test
 Version: 0.1
 Date: 2022-01-27
+Author: test
 Description: test
 Depends:
     R (>= 3.5)
