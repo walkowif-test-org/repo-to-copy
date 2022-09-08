@@ -4,7 +4,7 @@ name: Presidio check
 on:
   push:
     branches:
-      - test-branch
+      - main
   pull_request:
     branches:
       - main
@@ -25,4 +25,6 @@ jobs:
       - name: Produce the presidio report
         uses: insightsengineering/presidio-action@v1
         with:
-          output: "parsable"
+          configuration-data: |
+            threshold: 0.8
+          output: "github"
