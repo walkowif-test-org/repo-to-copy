@@ -7,7 +7,7 @@ on:
       - main
   pull_request:
     branches:
-      - test-branch
+      - main
 
 jobs:
   presidio-action:
