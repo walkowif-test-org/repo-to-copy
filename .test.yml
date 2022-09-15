@@ -1,7 +1,9 @@
 
 .autovalidate-r-autovalidate:
   stage: build
+  image: registry.code.roche.com/cicd-utilities/alpine:edge
   script:
+    - python3 --version
     - echo "test" > report.md
   artifacts:
     when: always
