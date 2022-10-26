@@ -23,9 +23,7 @@ jobs:
         repos:
           - name: gh-to-gh
             target-branch: main
-            reviewers:
-              - cicdguy
-              - arkadiuszbeer
+            reviewers: '["cicdguy", arkadiuszbeer"]'
 
     steps:
       - name: Checkout this repo
