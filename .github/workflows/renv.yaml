@@ -91,7 +91,7 @@ jobs:
             });
             console.log("PR number");
             console.log(result2.data.number);
-            console.log(${{ matrix.repos.reviewers }});
+            console.log('${{ matrix.repos.reviewers }}');
             const result3 = await github.rest.pulls.requestReviewers({
               owner: repo_owner,
               repo: repo_name,
