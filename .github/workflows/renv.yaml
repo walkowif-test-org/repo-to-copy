@@ -23,7 +23,6 @@ jobs:
         repos:
           - name: gh-to-gh
             target-branch: main
-            token: ${{ secrets.WALKOWIF_TEST }}
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
@@ -33,6 +32,7 @@ jobs:
         with:
           repository: ${{ github.repository_owner }}/${{ matrix.repos.name }}
           path: ./extension-repo
+          token: ${{ secrets.WALKOWIF_TEST }}
 
       - name: Update renv.lock in ${{ matrix.repos.name }}
         run: |
@@ -69,6 +69,7 @@ jobs:
       - name: Create Pull Request in ${{ matrix.repos.name }}
         uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.WALKOWIF_TEST }}
           script: |
             const repo_owner = "${{ github.repository_owner }}";
             const repo_name = "${{ matrix.repos.name }}";
