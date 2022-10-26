@@ -61,7 +61,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: renv update from ${{ github.repository }}
-          file_pattern: 'renv.lock renv/*
+          file_pattern: 'renv.lock renv/*'
           repository: extension-repo
           branch: ${{ env.PR_BRANCH_NAME }}@${{ matrix.repos.target-branch }}
           create_branch: true
