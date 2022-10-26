@@ -101,11 +101,11 @@ jobs:
             });
             console.log("PR number");
             console.log(result2.data.number);
-            console.log("${{ matrix.repos.reviewers }}");
-            console.log("${{ matrix.repos.reviewers }}".split("\n"));
+            const reviewer_list = `${{ matrix.repos.reviewers }}`.split("\n");
+            console.log(reviewer_list);
             const result3 = await github.rest.pulls.requestReviewers({
               owner: repo_owner,
               repo: repo_name,
               pull_number: result2.data.number,
-              reviewers: "${{ matrix.repos.reviewers }}".split("\n")
+              reviewers: reviewer_list
             });
