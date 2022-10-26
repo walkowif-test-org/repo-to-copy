@@ -24,11 +24,11 @@ jobs:
           - name: gh-to-gh
             target-branch: main
             reviewers: |-
-              cicdguy
+              arkadiuszbeer
           - name: gl-to-gh
             target-branch: main
             reviewers: |-
-              cicdguy
+              arkadiuszbeer
 
 
     steps:
