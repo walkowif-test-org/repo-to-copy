@@ -88,9 +88,3 @@ jobs:
               ].join('')
             });
             console.log(result2);
-            # const result3 = await github.rest.pulls.requestReviewers({
-            #   owner: repo_owner,
-            #   repo: repo_name,
-            #   pull_number: # TODO
-            #   reviewers: # TODO
-            # });
