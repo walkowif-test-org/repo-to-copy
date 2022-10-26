@@ -87,4 +87,11 @@ jobs:
                 '\n\nPlease review the changes.'
               ].join('')
             });
-            console.log(result2);
+            console.log("PR number");
+            console.log(result2.data.number);
+            const result3 = await github.rest.pulls.requestReviewers({
+              owner: repo_owner,
+              repo: repo_name,
+              pull_number: result2.data.number,
+              reviewers: ["walkowif", "cicdguy"]
+            });
