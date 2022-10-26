@@ -25,14 +25,10 @@ jobs:
             target-branch: main
             reviewers: |-
               cicdguy
-              arkadiuszbeer
-              KlaudiaBB
           - name: gl-to-gh
             target-branch: main
             reviewers: |-
               cicdguy
-              arkadiuszbeer
-              KlaudiaBB
 
 
     steps:
