@@ -23,7 +23,7 @@ jobs:
         repos:
           - name: gh-to-gh
             target-branch: main
-
+            token: ${{ secrets.WALKOWIF_TEST }}
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
