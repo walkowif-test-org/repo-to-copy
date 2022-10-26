@@ -23,7 +23,9 @@ jobs:
         repos:
           - name: gh-to-gh
             target-branch: main
-            reviewers: ["cicdguy", "arkadiuszbeer"]
+            reviewers:
+              - cicdguy
+              - arkadiuszbeer
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
@@ -94,5 +96,5 @@ jobs:
               owner: repo_owner,
               repo: repo_name,
               pull_number: result2.data.number,
-              reviewers: '${ matrix.repos.reviewers }'
+              reviewers: '${{ matrix.repos.reviewers }}'
             });
