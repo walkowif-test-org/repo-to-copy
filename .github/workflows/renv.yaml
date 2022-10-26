@@ -23,7 +23,7 @@ jobs:
         repos:
           - name: gh-to-gh
             target-branch: main
-            reviewers: '["cicdguy", arkadiuszbeer"]'
+            reviewers: ["cicdguy", arkadiuszbeer"]
 
     steps:
       - name: Checkout this repo
@@ -91,9 +91,10 @@ jobs:
             });
             console.log("PR number");
             console.log(result2.data.number);
+            console.log(${{ matrix.repos.reviewers }});
             const result3 = await github.rest.pulls.requestReviewers({
               owner: repo_owner,
               repo: repo_name,
               pull_number: result2.data.number,
-              reviewers: ${{ matrix.repos.reviewers }}
+              reviewers: '${{ matrix.repos.reviewers }}'
             });
